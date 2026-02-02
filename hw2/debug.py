@@ -1,7 +1,7 @@
 import requests
 
 # Correct IP addresses for both instances
-EC2_URL1 = "http://18.234.232.1:8080/albums"
+EC2_URL1 = "http://3.90.190.157:8080/albums"
 EC2_URL2 = "http://52.23.198.65:8080/albums"
 
 POST_DATA = {
