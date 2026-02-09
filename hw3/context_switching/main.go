@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func pingPong(rounds int) (time.Duration, time.Duration) {
+func content_switch(rounds int) (time.Duration, time.Duration) {
 	ch := make(chan struct{})
 	done := make(chan struct{})
 	start := time.Now()
@@ -36,13 +36,13 @@ func main() {
 	const N = 1_000_000
 
 	runtime.GOMAXPROCS(1)
-	total1, avg1 := pingPong(N)
+	total1, avg1 := content_switch(N)
 	fmt.Printf("GOMAXPROCS=1\n")
 	fmt.Printf("  total: %v\n", total1)
 	fmt.Printf("  avg per hand-off: %v\n\n", avg1)
 
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	total2, avg2 := pingPong(N)
+	total2, avg2 := content_switch(N)
 	fmt.Printf("GOMAXPROCS=%d\n", runtime.GOMAXPROCS(0))
 	fmt.Printf("  total: %v\n", total2)
 	fmt.Printf("  avg per hand-off: %v\n", avg2)
