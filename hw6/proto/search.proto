@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package search;
+
+option go_package = "productsearch/proto;searchpb";
+
+service ProductSearchService {
+  rpc SearchProducts(SearchRequest) returns (SearchReply);
+}
+
+message SearchRequest {
+  string query = 1;
+  int32 max_checks = 2;
+  int32 max_results = 3;
+}
+
+message ProductMessage {
+  int32 id = 1;
+  string name = 2;
+  string category = 3;
+  string description = 4;
+  string brand = 5;
+}
+
+message SearchReply {
+  repeated ProductMessage products = 1;
+  int32 total_found = 2;
+  string search_time = 3;
+}

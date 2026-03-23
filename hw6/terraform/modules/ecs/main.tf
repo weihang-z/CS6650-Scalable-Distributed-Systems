@@ -44,7 +44,7 @@ resource "aws_ecs_service" "this" {
 
   wait_for_steady_state = true
 
-  health_check_grace_period_seconds = 60
+  health_check_grace_period_seconds = 30
 
   network_configuration {
     subnets          = var.subnet_ids

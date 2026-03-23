@@ -91,9 +91,9 @@ func createProduct(c *gin.Context) {
 func getProduct(c *gin.Context) {
 	id, _ := parseProductID(c.Param("productId"))
 
-	mu.Lock()
+	mu.RLock()
 	p, exists := products[id]
-	mu.Unlock()
+	mu.RUnlock()
 
 	if !exists {
 		c.JSON(http.StatusNotFound, ErrorBody{
