@@ -1,0 +1,3 @@
+{
+  "python.analysis.extraPaths": ["./hw8/locust"]
+}
