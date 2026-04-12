@@ -70,12 +70,11 @@ func (s *LeaderFollowerService) ClientSet(ctx context.Context, key string, value
 
 	switch s.writeW {
 	case 1:
-		// W=1 means the leader can acknowledge immediately after its own local write.
 		go s.propagateInBackground(key, record, followerURLs)
 		return record, nil
 
 	case 3, 5:
-		ackCount := 1 // leader local write counts as one acknowledgement
+		ackCount := 1
 		nextIndex := 0
 
 		for nextIndex < len(followerURLs) {
