@@ -6,8 +6,12 @@ import org.example.scalablenotificationsystem.messaging.event.NotificationReques
 import org.example.scalablenotificationsystem.messaging.producer.KafkaEventPublisher;
 import org.example.scalablenotificationsystem.support.JsonSupport;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+
+@ConditionalOnProperty(name = "APP_ROLE", havingValue = "ingress", matchIfMissing = true)
 @Service
 public class RoutingService {
 
@@ -28,6 +32,8 @@ public class RoutingService {
 
     public void route(NotificationRequestedEvent event) {
         for (String channel : event.channels()) {
+            Instant producedAt = Instant.now();
+
             switch (channel.toUpperCase()) {
                 case "EMAIL" -> {
                     EmailMessage emailMessage = new EmailMessage(
@@ -35,7 +41,9 @@ public class RoutingService {
                             event.notificationId(),
                             event.userId(),
                             event.eventType(),
-                            event.payloadJson()
+                            event.payloadJson(),
+                            event.apiAcceptedAt(),
+                            producedAt
                     );
                     kafkaEventPublisher.publish(
                             emailSendTopic,
@@ -49,7 +57,9 @@ public class RoutingService {
                             event.notificationId(),
                             event.userId(),
                             event.eventType(),
-                            event.payloadJson()
+                            event.payloadJson(),
+                            event.apiAcceptedAt(),
+                            producedAt
                     );
                     kafkaEventPublisher.publish(
                             inAppSendTopic,

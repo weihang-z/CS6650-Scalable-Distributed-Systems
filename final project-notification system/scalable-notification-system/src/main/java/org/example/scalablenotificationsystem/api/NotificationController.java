@@ -4,10 +4,12 @@ import jakarta.validation.Valid;
 import org.example.scalablenotificationsystem.api.dto.NotificationRequest;
 import org.example.scalablenotificationsystem.api.dto.NotificationResponse;
 import org.example.scalablenotificationsystem.application.NotificationService;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@ConditionalOnProperty(name = "APP_ROLE", havingValue = "ingress", matchIfMissing = true)
 @RestController
 @RequestMapping("/notifications")
 public class NotificationController {

@@ -1,5 +1,6 @@
 package org.example.scalablenotificationsystem.messaging.event;
 
+import java.time.Instant;
 import java.util.List;
 
 public record NotificationRequestedEvent(
@@ -9,6 +10,7 @@ public record NotificationRequestedEvent(
         String userId,
         String eventType,
         List<String> channels,
-        String payloadJson
+        String payloadJson,
+        Instant apiAcceptedAt
 ) {
 }

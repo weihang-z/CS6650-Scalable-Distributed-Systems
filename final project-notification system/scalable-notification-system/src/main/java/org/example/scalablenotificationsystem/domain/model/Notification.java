@@ -45,19 +45,27 @@ public class Notification {
                         String eventType,
                         String channel,
                         String payloadJson,
-                        String status) {
+                        String status,
+                        Instant createdAt,
+                        Instant updatedAt) {
         this.tenantId = tenantId;
         this.userId = userId;
         this.eventType = eventType;
         this.channel = channel;
         this.payloadJson = payloadJson;
         this.status = status;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     @PrePersist
     public void onCreate() {
-        this.createdAt = Instant.now();
-        this.updatedAt = this.createdAt;
+        if (this.createdAt == null) {
+            this.createdAt = Instant.now();
+        }
+        if (this.updatedAt == null) {
+            this.updatedAt = this.createdAt;
+        }
     }
 
     @PreUpdate

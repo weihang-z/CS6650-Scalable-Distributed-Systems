@@ -1,0 +1,42 @@
+{
+  "replicas": 1,
+  "start_time_utc": "2026-04-21T06:12:04Z",
+  "end_time_utc": "2026-04-21T06:17:26Z",
+  "kafka_public_ip": "18.234.178.195",
+  "loadgen_public_ip": "54.162.14.153",
+  "locust": {
+    "request_count": 88155,
+    "failure_count": 0,
+    "requests_per_sec": 293.391550985919,
+    "failures_per_sec": 0.0,
+    "avg_response_ms": 237.1940953630618,
+    "p95_response_ms": 480.0,
+    "p99_response_ms": 1200.0,
+    "max_response_ms": 10888.348572999803
+  },
+  "email_worker_cpu": {
+    "avg_average": 14.578940994727116,
+    "max_maximum": 99.57662963867188,
+    "points": 4
+  },
+  "email_worker_memory": {
+    "avg_average": 19.087727864583336,
+    "max_maximum": 26.85546875,
+    "points": 4
+  },
+  "ingress_cpu": {
+    "avg_average": 89.84542592366536,
+    "max_maximum": 99.21761322021484,
+    "points": 4
+  },
+  "ingress_memory": {
+    "avg_average": 42.289225260416664,
+    "max_maximum": 43.45703125,
+    "points": 4
+  },
+  "email_worker_group_lag": {
+    "avg_total_lag": 0.0,
+    "max_total_lag": 0,
+    "samples": 14
+  }
+}

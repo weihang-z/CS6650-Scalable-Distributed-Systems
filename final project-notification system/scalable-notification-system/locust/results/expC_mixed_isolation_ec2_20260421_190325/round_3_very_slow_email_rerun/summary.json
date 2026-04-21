@@ -1,0 +1,88 @@
+{
+  "round_name": "round_3_very_slow_email_rerun",
+  "start_time_utc": "2026-04-21T11:07:33Z",
+  "end_time_utc": "2026-04-21T11:13:09Z",
+  "kafka_public_ip": "54.164.151.146",
+  "loadgen_public_ip": "3.91.105.255",
+  "email_latency_ms": 3000,
+  "inapp_latency_ms": 20,
+  "locust": {
+    "request_count": 8322,
+    "failure_count": 0,
+    "success_rate": 1.0,
+    "requests_per_sec": 27.7103755668999,
+    "failures_per_sec": 0.0,
+    "avg_response_ms": 2110.128381155375,
+    "p95_response_ms": 2800.0,
+    "p99_response_ms": 3100.0,
+    "max_response_ms": 4966.037508999989
+  },
+  "email_worker_group_lag": {
+    "avg_total_lag": 0.0,
+    "max_total_lag": 0,
+    "samples": 37
+  },
+  "inapp_worker_group_lag": {
+    "avg_total_lag": 0.0,
+    "max_total_lag": 0,
+    "samples": 37
+  },
+  "email_worker_cpu": {
+    "avg_average": 1.0808876388602786,
+    "max_maximum": 1.5239397287368774,
+    "points": 6
+  },
+  "email_worker_memory": {
+    "avg_average": 25.34450954861111,
+    "max_maximum": 25.390625,
+    "points": 6
+  },
+  "inapp_worker_cpu": {
+    "avg_average": 0.9464947217040592,
+    "max_maximum": 1.3814479112625122,
+    "points": 6
+  },
+  "inapp_worker_memory": {
+    "avg_average": 24.36794704861111,
+    "max_maximum": 24.4140625,
+    "points": 6
+  },
+  "ingress_cpu": {
+    "avg_average": 8.493770976861319,
+    "max_maximum": 16.222274780273438,
+    "points": 6
+  },
+  "ingress_memory": {
+    "avg_average": 35.03146701388889,
+    "max_maximum": 35.05859375,
+    "points": 6
+  },
+  "sampled_notifications": {
+    "count": 166,
+    "sample_rate": 0.02
+  },
+  "email_attempts": {
+    "expected_samples": 102,
+    "observed_samples": 0,
+    "missing_samples": 102,
+    "success_rate": null,
+    "avg_queue_wait_ms": null,
+    "p95_queue_wait_ms": null,
+    "avg_processing_ms": null,
+    "p95_processing_ms": null,
+    "avg_end_to_end_ms": null,
+    "p95_end_to_end_ms": null
+  },
+  "inapp_attempts": {
+    "expected_samples": 115,
+    "observed_samples": 0,
+    "missing_samples": 115,
+    "success_rate": null,
+    "avg_queue_wait_ms": null,
+    "p95_queue_wait_ms": null,
+    "avg_processing_ms": null,
+    "p95_processing_ms": null,
+    "avg_end_to_end_ms": null,
+    "p95_end_to_end_ms": null
+  }
+}

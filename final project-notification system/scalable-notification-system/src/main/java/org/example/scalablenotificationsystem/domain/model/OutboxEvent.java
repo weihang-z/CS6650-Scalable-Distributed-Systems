@@ -8,7 +8,12 @@ import java.util.UUID;
 
 @Entity
 @Getter
-@Table(name = "outbox_events")
+@Table(
+        name = "outbox_events",
+        indexes = {
+                @Index(name = "idx_outbox_status_created_at", columnList = "status, created_at")
+        }
+)
 public class OutboxEvent {
 
     @Id
@@ -33,7 +38,7 @@ public class OutboxEvent {
     @Column(nullable = false)
     private String status; // NEW / PUBLISHED / FAILED
 
-    @Column(nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
     protected OutboxEvent() {

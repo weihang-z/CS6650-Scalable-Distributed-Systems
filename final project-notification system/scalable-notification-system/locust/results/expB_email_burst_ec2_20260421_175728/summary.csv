@@ -1,0 +1,2 @@
+email_worker_replicas,success_rate,requests_per_sec,failures_per_sec,p95_response_ms,p99_response_ms,peak_lag,time_to_recover_sec,email_worker_cpu_max,email_worker_mem_max,ingress_cpu_max,ingress_mem_max,task_set_changed,interesting_event_count
+1,0.9435665914221218,20.284718508422603,1.144735807473059,28000.0,39000.0,0,0.0,1.985778093338013,25.0,99.64491271972656,39.94140625,False,0

@@ -9,11 +9,14 @@ import org.example.scalablenotificationsystem.domain.repository.NotificationRepo
 import org.example.scalablenotificationsystem.domain.repository.OutboxEventRepository;
 import org.example.scalablenotificationsystem.messaging.event.NotificationRequestedEvent;
 import org.example.scalablenotificationsystem.support.JsonSupport;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.UUID;
 
+@ConditionalOnProperty(name = "APP_ROLE", havingValue = "ingress", matchIfMissing = true)
 @Service
 public class NotificationService {
 
@@ -34,14 +37,17 @@ public class NotificationService {
 
     @Transactional
     public NotificationResponse createNotification(NotificationRequest request) {
+        Instant acceptedAt = Instant.now();
+
         Notification notification = new Notification(
                 request.tenantId(),
                 request.userId(),
                 request.eventType(),
-                //TODO: dynamically define channel
                 "MULTI_CHANNEL",
                 request.payloadJson(),
-                "PENDING"
+                "PENDING",
+                acceptedAt,
+                acceptedAt
         );
         notificationRepository.save(notification);
 
@@ -52,7 +58,8 @@ public class NotificationService {
                 request.userId(),
                 request.eventType(),
                 request.channels(),
-                request.payloadJson()
+                request.payloadJson(),
+                acceptedAt
         );
 
         OutboxEvent outboxEvent = new OutboxEvent(

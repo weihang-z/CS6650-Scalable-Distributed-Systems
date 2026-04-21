@@ -1,0 +1,88 @@
+{
+  "round_name": "round_2_slow_email",
+  "start_time_utc": "2026-04-21T10:42:43Z",
+  "end_time_utc": "2026-04-21T10:48:15Z",
+  "kafka_public_ip": "13.217.118.74",
+  "loadgen_public_ip": "3.90.169.113",
+  "email_latency_ms": 1000,
+  "inapp_latency_ms": 20,
+  "locust": {
+    "request_count": 8275,
+    "failure_count": 0,
+    "success_rate": 1.0,
+    "requests_per_sec": 27.534177207461607,
+    "failures_per_sec": 0.0,
+    "avg_response_ms": 2120.9205367555305,
+    "p95_response_ms": 2800.0,
+    "p99_response_ms": 3100.0,
+    "max_response_ms": 5267.656219000855
+  },
+  "email_worker_group_lag": {
+    "avg_total_lag": 0.0,
+    "max_total_lag": 0,
+    "samples": 27
+  },
+  "inapp_worker_group_lag": {
+    "avg_total_lag": 0.0,
+    "max_total_lag": 0,
+    "samples": 27
+  },
+  "email_worker_cpu": {
+    "avg_average": 1.3355374402470057,
+    "max_maximum": 3.300431966781616,
+    "points": 6
+  },
+  "email_worker_memory": {
+    "avg_average": 29.427083333333332,
+    "max_maximum": 29.4921875,
+    "points": 6
+  },
+  "inapp_worker_cpu": {
+    "avg_average": 0.9993269277943505,
+    "max_maximum": 1.7865679264068604,
+    "points": 6
+  },
+  "inapp_worker_memory": {
+    "avg_average": 26.904296875,
+    "max_maximum": 27.05078125,
+    "points": 6
+  },
+  "ingress_cpu": {
+    "avg_average": 8.859487290183703,
+    "max_maximum": 23.814693450927734,
+    "points": 6
+  },
+  "ingress_memory": {
+    "avg_average": 34.94737413194444,
+    "max_maximum": 35.05859375,
+    "points": 6
+  },
+  "sampled_notifications": {
+    "count": 166,
+    "sample_rate": 0.02
+  },
+  "email_attempts": {
+    "expected_samples": 109,
+    "observed_samples": 0,
+    "missing_samples": 109,
+    "success_rate": null,
+    "avg_queue_wait_ms": null,
+    "p95_queue_wait_ms": null,
+    "avg_processing_ms": null,
+    "p95_processing_ms": null,
+    "avg_end_to_end_ms": null,
+    "p95_end_to_end_ms": null
+  },
+  "inapp_attempts": {
+    "expected_samples": 103,
+    "observed_samples": 0,
+    "missing_samples": 103,
+    "success_rate": null,
+    "avg_queue_wait_ms": null,
+    "p95_queue_wait_ms": null,
+    "avg_processing_ms": null,
+    "p95_processing_ms": null,
+    "avg_end_to_end_ms": null,
+    "p95_end_to_end_ms": null
+  }
+}

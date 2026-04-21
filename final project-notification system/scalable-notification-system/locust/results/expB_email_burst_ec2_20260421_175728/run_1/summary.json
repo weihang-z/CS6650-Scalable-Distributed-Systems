@@ -1,0 +1,101 @@
+{
+  "start_time_utc": "2026-04-21T09:58:45Z",
+  "end_time_utc": "2026-04-21T10:07:14Z",
+  "kafka_public_ip": "13.217.118.74",
+  "loadgen_public_ip": "3.90.169.113",
+  "email_worker_replicas": 1,
+  "topic_partitions": {
+    "notification.requested": 4,
+    "notification.email.send": 8,
+    "notification.inapp.send": 8
+  },
+  "workload": {
+    "test_mode": "burst",
+    "channel_mode": "EMAIL",
+    "baseline_users": 20,
+    "baseline_duration_sec": 120,
+    "spike_users": 400,
+    "spike_duration_sec": 120,
+    "recovery_duration_sec": 240,
+    "spawn_rate": 80.0,
+    "payload_bytes": 256
+  },
+  "locust": {
+    "request_count": 9746,
+    "failure_count": 550,
+    "success_rate": 0.9435665914221218,
+    "requests_per_sec": 20.284718508422603,
+    "failures_per_sec": 1.144735807473059,
+    "avg_response_ms": 5174.922964787797,
+    "p95_response_ms": 28000.0,
+    "p99_response_ms": 39000.0,
+    "max_response_ms": 40804.57346700132
+  },
+  "locust_phase_rates": {
+    "baseline": {
+      "samples": 113,
+      "avg_requests_per_sec": 22.24190546902655,
+      "max_requests_per_sec": 34.7,
+      "avg_failures_per_sec": 0.0,
+      "max_user_count": 20
+    },
+    "spike": {
+      "samples": 119,
+      "avg_requests_per_sec": 20.98739495798319,
+      "max_requests_per_sec": 24.0,
+      "avg_failures_per_sec": 0.9268907563025209,
+      "max_user_count": 400
+    },
+    "recovery": {
+      "samples": 239,
+      "avg_requests_per_sec": 18.64979079497908,
+      "max_requests_per_sec": 38.6,
+      "avg_failures_per_sec": 1.8184100418410043,
+      "max_user_count": 400
+    }
+  },
+  "lag_recovery": {
+    "samples": 62,
+    "baseline_avg_lag": 0.0,
+    "baseline_max_lag": 0,
+    "recovery_threshold_lag": 5,
+    "lag_rise_time_utc": null,
+    "lag_rise_after_spike_start_sec": null,
+    "peak_lag": 0,
+    "peak_lag_time_utc": "2026-04-21T09:58:51Z",
+    "recovered_time_utc": "2026-04-21T10:02:45Z",
+    "time_to_recover_sec": 0.0
+  },
+  "email_worker_cpu": {
+    "avg_average": 0.9316997503240904,
+    "max_maximum": 1.985778093338013,
+    "points": 8
+  },
+  "email_worker_memory": {
+    "avg_average": 24.888102213541668,
+    "max_maximum": 25.0,
+    "points": 8
+  },
+  "ingress_cpu": {
+    "avg_average": 20.694702961792547,
+    "max_maximum": 99.64491271972656,
+    "points": 8
+  },
+  "ingress_memory": {
+    "avg_average": 28.11804877387153,
+    "max_maximum": 39.94140625,
+    "points": 8
+  },
+  "email_worker_health": {
+    "task_set_changed": false,
+    "pre_run_task_arns": [
+      "arn:aws:ecs:us-east-1:654385348207:task/scalable-notification-system-dev-cluster/1a9423b5dd3d42cba5d3de653ee9adae"
+    ],
+    "post_run_task_arns": [
+      "arn:aws:ecs:us-east-1:654385348207:task/scalable-notification-system-dev-cluster/1a9423b5dd3d42cba5d3de653ee9adae"
+    ],
+    "interesting_events": [],
+    "event_count_before_run": 94,
+    "event_count_after_run": 94
+  }
+}

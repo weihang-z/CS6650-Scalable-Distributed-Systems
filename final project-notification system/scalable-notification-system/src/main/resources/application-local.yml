@@ -22,11 +22,18 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: 1
+      properties:
+        linger.ms: 5
+        batch.size: 65536
+        compression.type: lz4
 
 server:
   port: 8080
 
 app:
+  kafka:
+    notification-requested-consumer-concurrency: 4
   topics:
     notification-requested: notification.requested
     email-send: notification.email.send
@@ -35,5 +42,12 @@ app:
   outbox:
     publisher:
       enabled: true
-      batch-size: 100
-      fixed-delay-ms: 2000
+      batch-size: 1000
+      max-batches-per-run: 20
+      fixed-delay-ms: 50
+
+  providers:
+    email:
+      simulated-latency-ms: 100
+    inapp:
+      simulated-latency-ms: 20

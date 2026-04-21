@@ -1,0 +1,40 @@
+{
+  "replicas": 2,
+  "start_time_utc": "2026-04-21T06:01:28Z",
+  "end_time_utc": "2026-04-21T06:06:32Z",
+  "locust": {
+    "request_count": 52296,
+    "failure_count": 0,
+    "requests_per_sec": 173.90421537324374,
+    "failures_per_sec": 0.0,
+    "avg_response_ms": 421.2777689159238,
+    "p95_response_ms": 610.0,
+    "p99_response_ms": 1800.0,
+    "max_response_ms": 16168.736833147705
+  },
+  "email_worker_cpu": {
+    "avg_average": 5.2903744131326675,
+    "max_maximum": 99.88906860351562,
+    "points": 4
+  },
+  "email_worker_memory": {
+    "avg_average": 25.0,
+    "max_maximum": 26.85546875,
+    "points": 4
+  },
+  "ingress_cpu": {
+    "avg_average": 39.08381318052609,
+    "max_maximum": 54.125431060791016,
+    "points": 4
+  },
+  "ingress_memory": {
+    "avg_average": 39.725748697916664,
+    "max_maximum": 39.84375,
+    "points": 4
+  },
+  "email_worker_group_lag": {
+    "avg_total_lag": 0.0,
+    "max_total_lag": 0,
+    "samples": 14
+  }
+}

@@ -1,6 +1,7 @@
 package org.example.scalablenotificationsystem;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.example.scalablenotificationsystem.api.dto.NotificationRequest;
 import org.example.scalablenotificationsystem.application.NotificationService;
 import org.example.scalablenotificationsystem.domain.model.Notification;
@@ -27,7 +28,7 @@ class NotificationServiceTest {
     void setUp() {
         notificationRepository = mock(NotificationRepository.class);
         outboxEventRepository = mock(OutboxEventRepository.class);
-        jsonSupport = new JsonSupport(new ObjectMapper());
+        jsonSupport = new JsonSupport(new ObjectMapper().registerModule(new JavaTimeModule()));
 
         notificationService = new NotificationService(
                 notificationRepository,
